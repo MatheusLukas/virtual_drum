@@ -24,9 +24,9 @@ function mainWorkFlow() {
       hithatRight.src = "img/crash.png";
     }
   };
-  buttons.map((buttons) => {
-    buttons.innerHTML = "Oi";
-  });
+  // buttons.map((buttons) => {
+  //   buttons.innerHTML = "Oi";
+  // });
 
   function getKeysEdited() {
     inputEdit.map((inputEdit) => {
