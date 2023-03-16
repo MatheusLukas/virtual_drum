@@ -1,0 +1,105 @@
+body {
+  background-color: rgb(28, 28, 28);
+  display: grid;
+  grid-template-columns: 80% 20%;
+}
+
+.drum {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hithat-right {
+  position: relative;
+  bottom: 90px;
+  right: 404px;
+  width: 127px;
+}
+
+.hithat-left {
+  position: relative;
+  bottom: 55px;
+  right: 291px;
+  width: 127px;
+}
+
+.key_edit {
+  border: 2px rgb(79, 77, 77) solid;
+  width: 30px;
+  height: 30px;
+  background-color: rgb(163, 157, 157);
+  border-radius: 5px;
+  text-align: center;
+}
+
+.key_edit:hover {
+  border-color: black;
+  background-color: white;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal .content {
+  background-color: #d3d3d3;
+  margin: 15% auto;
+  padding: 20px;
+  border-radius: 5px;
+  width: 40%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.div_input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input_edit {
+  border: 2px rgb(79, 77, 77) solid;
+  width: 100%;
+  height: 30px;
+  background-color: rgb(163, 157, 157);
+  border-radius: 5px;
+}
+
+.keys_sounds {
+  margin-top: 40px;
+  background-color: black;
+  color: white;
+  padding: 10px 30px;
+  border-radius: 15px;
+}
+
+.teste {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+span {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+button {
+  border: 2px rgb(79, 77, 77) solid;
+  width: 30px;
+  height: 30px;
+  background-color: rgb(163, 157, 157);
+  border-radius: 5px;
+}

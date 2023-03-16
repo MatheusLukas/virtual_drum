@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bateria Virtual</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="drum">
+      <img src="img/drum-kit-sem-fundo.png" alt="" />
+      <img src="img/hihat-top.png" class="hithat-right" id="hithat-right" />
+      <img src="img/hihat-top.png" class="hithat-left" id="hithat-left" />
+    </div>
+    <div class="teste">
+      <div class="keys_sounds">
+        <h1>Teclas/Sons</h1>
+        <span
+          ><button id="button">E</button>
+          <p>Crash</p></span
+        >
+        <span
+          ><button id="button">R</button>
+          <p>Ride</p></span
+        >
+        <span
+          ><button id="button">F</button>
+          <p>Floor Tom</p></span
+        >
+        <span
+          ><button id="button">G</button>
+          <p>Mid Tom</p></span
+        >
+        <span
+          ><button id="button">H</button>
+          <p>High Tom</p></span
+        >
+        <span
+          ><button id="button">V</button>
+          <button id="button">B</button>
+          <p>Kick</p></span
+        >
+        <span
+          ><button id="button">J</button>
+          <p>Snare</p></span
+        >
+        <span
+          ><button id="button">I</button>
+          <p>Hi-Hat Open</p></span
+        >
+        <span
+          ><button id="button">K</button>
+          <p>Hi-Hat Closed</p></span
+        >
+        <div class="div_input">
+          <button class="input_edit">Editar</button>
+        </div>
+      </div>
+
+      <div class="modal">
+        <div class="content">
+          <h1>Edite as Teclas para tocar!</h1>
+          <div>
+            <span
+              ><input class="key_edit" value="" />
+              <p>Crash</p>
+            </span>
+            <span
+              ><input class="key_edit" value="" />
+              <p>Ride</p>
+            </span>
+            <span
+              ><input class="key_edit" value="" />
+              <p>Floor Tom</p>
+            </span>
+            <span
+              ><input class="key_edit" value="" />
+              <p>Mid Tom</p>
+            </span>
+            <span
+              ><input class="key_edit" value="" />
+              <p>High Tom</p>
+            </span>
+            <span
+              ><input class="key_edit" value="" />
+              <input class="key_edit" value="" />
+              <p>Kick</p>
+            </span>
+            <span
+              ><input class="key_edit" value="" />
+              <p>Snare</p>
+            </span>
+            <span
+              ><input class="key_edit" value="" />
+              <p>Hi-Hat Open</p>
+            </span>
+            <span
+              ><input class="key_edit" value="" />
+              <p>Hi-Hat Close</p>
+            </span>
+            <input
+              id="confirmKeys"
+              class="input_edit"
+              type="button"
+              value="Editar"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <audio accesskey="b" id="kick-2" src="sounds/2_kick.wav"></audio>
+    <audio accesskey="e" id="crash" src="sounds/crash.wav"></audio>
+    <audio accesskey="k" id="hh-close" src="sounds/hihat-close.wav"></audio>
+    <audio accesskey="i" id="hh-open" src="sounds/hihat-open.wav"></audio>
+    <audio accesskey="v" id="kick" src="sounds/kick.wav"></audio>
+    <audio accesskey="r" id="ride" src="sounds/ride.wav"></audio>
+    <audio accesskey="j" id="snare" src="sounds/snare.wav"></audio>
+    <audio accesskey="h" id="tom-high" src="sounds/tom-high.wav"></audio>
+    <audio accesskey="f" id="tom-low" src="sounds/tom-low.wav"></audio>
+    <audio accesskey="g" id="tom-mid" src="sounds/tom-mid.wav"></audio>
+  </body>
+</html>
