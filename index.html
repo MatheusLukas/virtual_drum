@@ -17,8 +17,12 @@
     <div class="teste">
       <div class="keys_sounds">
         <h1>Teclas/Sons</h1>
-        <span
-          ><button id="button">E</button>
+        <div
+          id="putGeneratedButtons"
+          style="display: flex; flex-direction: column"
+        >
+          <!-- <span>
+          <button id="button">E</button>
           <p>Crash</p></span
         >
         <span
@@ -53,7 +57,8 @@
         <span
           ><button id="button">K</button>
           <p>Hi-Hat Closed</p></span
-        >
+        > -->
+        </div>
         <div class="div_input">
           <button class="input_edit">Editar</button>
         </div>
@@ -61,43 +66,43 @@
 
       <div class="modal">
         <div class="content">
-          <h1>Edite as Teclas para tocar!</h1>
+          <h1 style="text-align: center">Edite as Teclas para tocar!</h1>
           <div>
             <span
-              ><input class="key_edit" value="e" />
+              ><input maxlength="1" class="key_edit" value="E" />
               <p>Crash</p>
             </span>
             <span
-              ><input class="key_edit" value="r" />
+              ><input maxlength="1" class="key_edit" value="R" />
               <p>Ride</p>
             </span>
             <span
-              ><input class="key_edit" value="f" />
+              ><input maxlength="1" class="key_edit" value="F" />
               <p>Floor Tom</p>
             </span>
             <span
-              ><input class="key_edit" value="g" />
+              ><input maxlength="1" class="key_edit" value="G" />
               <p>Mid Tom</p>
             </span>
             <span
-              ><input class="key_edit" value="h" />
+              ><input maxlength="1" class="key_edit" value="H" />
               <p>High Tom</p>
             </span>
             <span
-              ><input class="key_edit" value="v" />
-              <input class="key_edit" value="b" />
+              ><input maxlength="1" class="key_edit" value="V" />
+              <input maxlength="1" class="key_edit" value="B" />
               <p>Kick</p>
             </span>
             <span
-              ><input class="key_edit" value="j" />
+              ><input maxlength="1" class="key_edit" value="J" />
               <p>Snare</p>
             </span>
             <span
-              ><input class="key_edit" value="i" />
+              ><input maxlength="1" class="key_edit" value="I" />
               <p>Hi-Hat Open</p>
             </span>
             <span
-              ><input class="key_edit" value="k" />
+              ><input maxlength="1" class="key_edit" value="K" />
               <p>Hi-Hat Close</p>
             </span>
             <input
@@ -111,15 +116,55 @@
       </div>
     </div>
 
-    <audio accesskey="b" id="kick-2" src="sounds/2_kick.wav"></audio>
-    <audio accesskey="e" id="crash" src="sounds/crash.wav"></audio>
-    <audio accesskey="k" id="hh-close" src="sounds/hihat-close.wav"></audio>
-    <audio accesskey="i" id="hh-open" src="sounds/hihat-open.wav"></audio>
-    <audio accesskey="v" id="kick" src="sounds/kick.wav"></audio>
-    <audio accesskey="r" id="ride" src="sounds/ride.wav"></audio>
-    <audio accesskey="j" id="snare" src="sounds/snare.wav"></audio>
-    <audio accesskey="h" id="tom-high" src="sounds/tom-high.wav"></audio>
-    <audio accesskey="f" id="tom-low" src="sounds/tom-low.wav"></audio>
-    <audio accesskey="g" id="tom-mid" src="sounds/tom-mid.wav"></audio>
+    <audio
+      title="Crash"
+      accesskey="e"
+      id="crash"
+      src="sounds/crash.wav"
+    ></audio>
+    <audio title="Ride" accesskey="r" id="ride" src="sounds/ride.wav"></audio>
+    <audio
+      title="Floor Tom"
+      accesskey="f"
+      id="tom-low"
+      src="sounds/tom-low.wav"
+    ></audio>
+    <audio
+      title="Mid Tom"
+      accesskey="g"
+      id="tom-mid"
+      src="sounds/tom-mid.wav"
+    ></audio>
+    <audio
+      title="High Tom"
+      accesskey="h"
+      id="tom-high"
+      src="sounds/tom-high.wav"
+    ></audio>
+    <audio
+      title="Kick"
+      accesskey="b"
+      id="kick-2"
+      src="sounds/2_kick.wav"
+    ></audio>
+    <audio title="Kick" accesskey="v" id="kick" src="sounds/kick.wav"></audio>
+    <audio
+      title="Snare"
+      accesskey="j"
+      id="snare"
+      src="sounds/snare.wav"
+    ></audio>
+    <audio
+      title="Hi-Hat Open"
+      accesskey="i"
+      id="hh-open"
+      src="sounds/hihat-open.wav"
+    ></audio>
+    <audio
+      title="Hi-Hat Closed"
+      accesskey="k"
+      id="hh-close"
+      src="sounds/hihat-close.wav"
+    ></audio>
   </body>
 </html>
