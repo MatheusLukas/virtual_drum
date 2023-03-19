@@ -10,6 +10,7 @@ const putGeneratedButtons = document.querySelector("#putGeneratedButtons");
 const spanElement = document.createElement("span");
 
 const buttonLocalStorage = [];
+
 audio.map((audio) => {
   return buttonLocalStorage.push({
     orignalKey: audio.accessKey,
@@ -26,9 +27,15 @@ function mainWorkFlow() {
   console.log("oi");
   console.log(localStorage);
   console.log(buttonLocalStorage.editedKey);
+  const buttonLocalStorageString = localStorage.getItem("buttonLocalStorage");
+  const buttonLocalStorageObj = JSON.parse(buttonLocalStorageString);
   if (localStorage.length > 0) {
-    const buttonLocalStorageString = localStorage.getItem("buttonLocalStorage");
-    const buttonLocalStorageObj = JSON.parse(buttonLocalStorageString);
+    inputEdit.map(
+      (input, index) => (input.value = buttonLocalStorageObj[index].editedKey)
+    );
+
+    console.log("Bem aqui", buttonLocalStorageObj);
+
     // console.log(`Local Storage:`);
     // console.log(localStorage);
     // console.log(`teste:`);
@@ -49,56 +56,7 @@ function mainWorkFlow() {
     //
     console.log("cheguei1");
 
-    document.onkeydown = (e) => {
-      const key = e.key;
-      console.log("cheguei");
-      buttonLocalStorageObj.map((button) => {
-        console.log(button.editedKey);
-        console.log(button);
-        if (button.editedKey === key) {
-          playAudioKey(button.orignalKey);
-          if (button.orignalKey === "i" || button.orignalKey === "k") {
-            hithatLeft.src = "img/crash.png";
-          }
-          if (button.orignalKey === "e" || button.orignalKey) {
-            hithatRight.src = "img/crash.png";
-          }
-          console.log(key);
-        } else {
-          if (key === "i" || key === "k") {
-            hithatLeft.src = "img/crash.png";
-          }
-          if (key === "e" || key === "r") {
-            hithatRight.src = "img/crash.png";
-          }
-          console.log(key);
-          playAudioKey(key);
-        }
-      });
-    };
-
     //
-
-    document.onkeyup = (e) => {
-      const key = e.key;
-      buttonLocalStorageObj.map((button) => {
-        if (button.editedKey === key) {
-          if (button.orignalKey === "i" || button.orignalKey === "k") {
-            hithatLeft.src = "img/hihat-top.png";
-          }
-          if (button.orignalKey === "e" || button.orignalKey) {
-            hithatRight.src = "img/hihat-top.png";
-          }
-        } else {
-          if (key === "i" || key === "k") {
-            hithatLeft.src = "img/hihat-top.png";
-          }
-          if (key === "e" || key === "r") {
-            hithatRight.src = "img/hihat-top.png";
-          }
-        }
-      });
-    };
   } else {
     // esses botoes tinham um id botao
     console.log("Retorna as keys normais");
@@ -115,9 +73,13 @@ function mainWorkFlow() {
   }
 
   document.onkeydown = (e) => {
+    const modal = document.querySelector(".modal");
+    const actualStyle = modal.style.display;
+    if (actualStyle === "block") return;
     const key = e.key;
-
-    buttonLocalStorage.map((button) => {
+    const buttonLocalStorageString = localStorage.getItem("buttonLocalStorage");
+    const buttonLocalStorageObj = JSON.parse(buttonLocalStorageString);
+    buttonLocalStorageObj.map((button) => {
       if (button.editedKey === key) {
         playAudioKey(button.orignalKey);
         if (button.orignalKey === "i" || button.orignalKey === "k") {
@@ -141,19 +103,12 @@ function mainWorkFlow() {
   };
 }
 //
-// buttons.map((buttons) => {
-//   buttons.innerHTML = "Oi";
-// });
-
-// function getKeysEdited() {
-//   inputEdit.map((inputEdit) => {
-//     console.log(inputEdit);
-//   });
-// }
 
 document.onkeyup = (e) => {
   const key = e.key;
-  buttonLocalStorage.map((button) => {
+  const buttonLocalStorageString = localStorage.getItem("buttonLocalStorage");
+  const buttonLocalStorageObj = JSON.parse(buttonLocalStorageString);
+  buttonLocalStorageObj.map((button) => {
     if (button.editedKey === key) {
       if (button.orignalKey === "i" || button.orignalKey === "k") {
         hithatLeft.src = "img/hihat-top.png";
@@ -200,8 +155,7 @@ function switchModal() {
 //
 buttonModal.addEventListener("click", switchModal);
 inputConfirmEdit.addEventListener("click", (e) => {
-  let index = 0;
-  inputEdit.map((inputEdit) => {
+  inputEdit.map((inputEdit, index) => {
     let input = inputEdit.value;
     buttonLocalStorage[index].editedKey = input;
     console.log(input);
@@ -209,10 +163,12 @@ inputConfirmEdit.addEventListener("click", (e) => {
     console.log(buttonLocalStorage);
     console.log(buttonLocalStorage.editedKey);
   });
+
   localStorage.setItem(
     "buttonLocalStorage",
     JSON.stringify(buttonLocalStorage)
   );
+  switchModal();
   mainWorkFlow();
 });
 
