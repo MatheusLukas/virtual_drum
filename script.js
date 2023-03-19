@@ -18,15 +18,15 @@ audio.map((audio) => {
     soundName: audio.title,
   });
 });
-console.log(buttonLocalStorage[0].orignalKey);
+// console.log(buttonLocalStorage[0].orignalKey);
 //audios
 
 //e,r,f,g,v,b,h,j,i,k
 
 function mainWorkFlow() {
-  console.log("oi");
-  console.log(localStorage);
-  console.log(buttonLocalStorage.editedKey);
+  // console.log("oi");
+  // console.log(localStorage);
+  // console.log(buttonLocalStorage.editedKey);
   const buttonLocalStorageString = localStorage.getItem("buttonLocalStorage");
   const buttonLocalStorageObj = JSON.parse(buttonLocalStorageString);
   if (localStorage.length > 0) {
@@ -34,7 +34,7 @@ function mainWorkFlow() {
       (input, index) => (input.value = buttonLocalStorageObj[index].editedKey)
     );
 
-    console.log("Bem aqui", buttonLocalStorageObj);
+    // console.log("Bem aqui", buttonLocalStorageObj);
 
     // console.log(`Local Storage:`);
     // console.log(localStorage);
@@ -54,21 +54,21 @@ function mainWorkFlow() {
     });
 
     //
-    console.log("cheguei1");
+    // console.log("cheguei1");
 
     //
   } else {
     // esses botoes tinham um id botao
-    console.log("Retorna as keys normais");
+    // console.log("Retorna as keys normais");
 
-    console.log(buttonLocalStorage);
+    // console.log(buttonLocalStorage);
 
     buttonLocalStorage.map((buttonLocalStorage) => {
       putGeneratedButtons.innerHTML += `<span><button id="button">${buttonLocalStorage.orignalKey.toUpperCase()}</button> <p>${
         buttonLocalStorage.soundName
       }</p></span>`;
 
-      console.log(putGeneratedButtons.appendChild(spanElement));
+      // console.log(putGeneratedButtons.appendChild(spanElement));
     });
   }
 
@@ -88,7 +88,7 @@ function mainWorkFlow() {
         if (button.orignalKey === "e" || button.orignalKey) {
           hithatRight.src = "img/crash.png";
         }
-        console.log(key);
+        // console.log(key);
       } else {
         if (key === "i" || key === "k") {
           hithatLeft.src = "img/crash.png";
@@ -132,7 +132,7 @@ function playAudioKey(key) {
     if (key === audio.accessKey) {
       audio.play(audio.src);
       audio.currentTime = 0;
-      console.log(audio.accessKey);
+      // console.log(audio.accessKey);
     }
   });
 }
@@ -158,10 +158,10 @@ inputConfirmEdit.addEventListener("click", (e) => {
   inputEdit.map((inputEdit, index) => {
     let input = inputEdit.value;
     buttonLocalStorage[index].editedKey = input;
-    console.log(input);
+    // console.log(input);
     index++;
-    console.log(buttonLocalStorage);
-    console.log(buttonLocalStorage.editedKey);
+    // console.log(buttonLocalStorage);
+    // console.log(buttonLocalStorage.editedKey);
   });
 
   localStorage.setItem(
@@ -173,11 +173,11 @@ inputConfirmEdit.addEventListener("click", (e) => {
 });
 
 function cleanInput() {
-  console.log("vouLimpar");
+  // console.log("vouLimpar");
   buttonLocalStorage.map((buttonLocalStorage) => {
     buttonLocalStorage.orignalKey = "";
   });
-  console.log(buttonLocalStorage);
+  // console.log(buttonLocalStorage);
 }
 
 window.onclick = (e) => {
