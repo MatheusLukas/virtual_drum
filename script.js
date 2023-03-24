@@ -79,11 +79,8 @@ function mainWorkFlow() {
     const key = e.key;
     const buttonLocalStorageString = localStorage.getItem("buttonLocalStorage");
     const buttonLocalStorageObj = JSON.parse(buttonLocalStorageString);
-    console.log("aqui");
-    console.log(localStorage.length);
 
     if (localStorage.length === 0) {
-      console.log("salve");
       buttonLocalStorage.map((button) => {
         if (button.editedKey === key) {
           playAudioKey(button.orignalKey);
@@ -139,7 +136,6 @@ document.onkeyup = (e) => {
   if (localStorage.length === 0) {
     buttonLocalStorage.map((button) => {
       if (button.editedKey === key) {
-        playAudioKey(button.orignalKey);
         if (button.orignalKey === "i" || button.orignalKey === "k") {
           hithatLeft.src = "img/hihat-top.png";
         }
@@ -154,8 +150,6 @@ document.onkeyup = (e) => {
         if (key === "e" || key === "r") {
           hithatRight.src = "img/hihat-top.png";
         }
-
-        playAudioKey(key);
       }
     });
   } else {
