@@ -79,27 +79,55 @@ function mainWorkFlow() {
     const key = e.key;
     const buttonLocalStorageString = localStorage.getItem("buttonLocalStorage");
     const buttonLocalStorageObj = JSON.parse(buttonLocalStorageString);
-    buttonLocalStorageObj.map((button) => {
-      if (button.editedKey === key) {
-        playAudioKey(button.orignalKey);
-        if (button.orignalKey === "i" || button.orignalKey === "k") {
-          hithatLeft.src = "img/crash.png";
-        }
-        if (button.orignalKey === "e" || button.orignalKey) {
-          hithatRight.src = "img/crash.png";
-        }
-        // console.log(key);
-      } else {
-        if (key === "i" || key === "k") {
-          hithatLeft.src = "img/crash.png";
-        }
-        if (key === "e" || key === "r") {
-          hithatRight.src = "img/crash.png";
-        }
+    console.log("aqui");
+    console.log(localStorage.length);
 
-        playAudioKey(key);
-      }
-    });
+    if (localStorage.length === 0) {
+      console.log("salve");
+      buttonLocalStorage.map((button) => {
+        if (button.editedKey === key) {
+          playAudioKey(button.orignalKey);
+          if (button.orignalKey === "i" || button.orignalKey === "k") {
+            hithatLeft.src = "img/crash.png";
+          }
+          if (button.orignalKey === "e" || button.orignalKey) {
+            hithatRight.src = "img/crash.png";
+          }
+          // console.log(key);
+        } else {
+          if (key === "i" || key === "k") {
+            hithatLeft.src = "img/crash.png";
+          }
+          if (key === "e" || key === "r") {
+            hithatRight.src = "img/crash.png";
+          }
+
+          playAudioKey(key);
+        }
+      });
+    } else {
+      buttonLocalStorageObj.map((button) => {
+        if (button.editedKey === key) {
+          playAudioKey(button.orignalKey);
+          if (button.orignalKey === "i" || button.orignalKey === "k") {
+            hithatLeft.src = "img/crash.png";
+          }
+          if (button.orignalKey === "e" || button.orignalKey) {
+            hithatRight.src = "img/crash.png";
+          }
+          // console.log(key);
+        } else {
+          if (key === "i" || key === "k") {
+            hithatLeft.src = "img/crash.png";
+          }
+          if (key === "e" || key === "r") {
+            hithatRight.src = "img/crash.png";
+          }
+
+          playAudioKey(key);
+        }
+      });
+    }
   };
 }
 //
@@ -108,23 +136,47 @@ document.onkeyup = (e) => {
   const key = e.key;
   const buttonLocalStorageString = localStorage.getItem("buttonLocalStorage");
   const buttonLocalStorageObj = JSON.parse(buttonLocalStorageString);
-  buttonLocalStorageObj.map((button) => {
-    if (button.editedKey === key) {
-      if (button.orignalKey === "i" || button.orignalKey === "k") {
-        hithatLeft.src = "img/hihat-top.png";
+  if (localStorage.length === 0) {
+    buttonLocalStorage.map((button) => {
+      if (button.editedKey === key) {
+        playAudioKey(button.orignalKey);
+        if (button.orignalKey === "i" || button.orignalKey === "k") {
+          hithatLeft.src = "img/hihat-top.png";
+        }
+        if (button.orignalKey === "e" || button.orignalKey) {
+          hithatRight.src = "img/hihat-top.png";
+        }
+        // console.log(key);
+      } else {
+        if (key === "i" || key === "k") {
+          hithatLeft.src = "img/hihat-top.png";
+        }
+        if (key === "e" || key === "r") {
+          hithatRight.src = "img/hihat-top.png";
+        }
+
+        playAudioKey(key);
       }
-      if (button.orignalKey === "e" || button.orignalKey) {
-        hithatRight.src = "img/hihat-top.png";
+    });
+  } else {
+    buttonLocalStorageObj.map((button) => {
+      if (button.editedKey === key) {
+        if (button.orignalKey === "i" || button.orignalKey === "k") {
+          hithatLeft.src = "img/hihat-top.png";
+        }
+        if (button.orignalKey === "e" || button.orignalKey) {
+          hithatRight.src = "img/hihat-top.png";
+        }
+      } else {
+        if (key === "i" || key === "k") {
+          hithatLeft.src = "img/hihat-top.png";
+        }
+        if (key === "e" || key === "r") {
+          hithatRight.src = "img/hihat-top.png";
+        }
       }
-    } else {
-      if (key === "i" || key === "k") {
-        hithatLeft.src = "img/hihat-top.png";
-      }
-      if (key === "e" || key === "r") {
-        hithatRight.src = "img/hihat-top.png";
-      }
-    }
-  });
+    });
+  }
 };
 
 function playAudioKey(key) {
