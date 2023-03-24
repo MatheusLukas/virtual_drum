@@ -92,7 +92,7 @@ function mainWorkFlow() {
           }
           if (
             button.orignalKey.toLowerCase() === "e" ||
-            button.orignalKey.toLowerCase()
+            button.orignalKey.toLowerCase() === "r"
           ) {
             hithatRight.src = "img/crash.png";
           }
@@ -120,7 +120,7 @@ function mainWorkFlow() {
           }
           if (
             button.orignalKey.toLowerCase() === "e" ||
-            button.orignalKey.toLowerCase()
+            button.orignalKey.toLowerCase() === "r"
           ) {
             hithatRight.src = "img/crash.png";
           }
@@ -148,7 +148,7 @@ document.onkeyup = (e) => {
   const buttonLocalStorageObj = JSON.parse(buttonLocalStorageString);
   if (localStorage.length === 0) {
     buttonLocalStorage.map((button) => {
-      if (button.editedKey.toLowerCase() === key.toLowerCase()) {
+      if (button.orignalKey.toLowerCase() === key.toLowerCase()) {
         if (
           button.orignalKey.toLowerCase() === "i" ||
           button.orignalKey.toLowerCase() === "k"
@@ -182,7 +182,7 @@ document.onkeyup = (e) => {
         }
         if (
           button.orignalKey.toLowerCase() === "e" ||
-          button.orignalKey.toLowerCase()
+          button.orignalKey.toLowerCase() === "r"
         ) {
           hithatRight.src = "img/hihat-top.png";
         }
