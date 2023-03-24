@@ -82,20 +82,26 @@ function mainWorkFlow() {
 
     if (localStorage.length === 0) {
       buttonLocalStorage.map((button) => {
-        if (button.editedKey === key) {
+        if (button.orignalKey.toLowerCase() === key.toLowerCase()) {
           playAudioKey(button.orignalKey);
-          if (button.orignalKey === "i" || button.orignalKey === "k") {
+          if (
+            button.orignalKey.toLowerCase() === "i" ||
+            button.orignalKey.toLowerCase() === "k"
+          ) {
             hithatLeft.src = "img/crash.png";
           }
-          if (button.orignalKey === "e" || button.orignalKey) {
+          if (
+            button.orignalKey.toLowerCase() === "e" ||
+            button.orignalKey.toLowerCase()
+          ) {
             hithatRight.src = "img/crash.png";
           }
           // console.log(key);
         } else {
-          if (key === "i" || key === "k") {
+          if (key.toLowerCase() === "i" || key.toLowerCase() === "k") {
             hithatLeft.src = "img/crash.png";
           }
-          if (key === "e" || key === "r") {
+          if (key.toLowerCase() === "e" || key.toLowerCase() === "r") {
             hithatRight.src = "img/crash.png";
           }
 
@@ -104,20 +110,26 @@ function mainWorkFlow() {
       });
     } else {
       buttonLocalStorageObj.map((button) => {
-        if (button.editedKey === key) {
+        if (button.editedKey.toLowerCase() === key.toLowerCase()) {
           playAudioKey(button.orignalKey);
-          if (button.orignalKey === "i" || button.orignalKey === "k") {
+          if (
+            button.orignalKey.toLowerCase() === "i" ||
+            button.orignalKey.toLowerCase() === "k"
+          ) {
             hithatLeft.src = "img/crash.png";
           }
-          if (button.orignalKey === "e" || button.orignalKey) {
+          if (
+            button.orignalKey.toLowerCase() === "e" ||
+            button.orignalKey.toLowerCase()
+          ) {
             hithatRight.src = "img/crash.png";
           }
           // console.log(key);
         } else {
-          if (key === "i" || key === "k") {
+          if (key.toLowerCase() === "i" || key.toLowerCase() === "k") {
             hithatLeft.src = "img/crash.png";
           }
-          if (key === "e" || key === "r") {
+          if (key.toLowerCase() === "e" || key.toLowerCase() === "r") {
             hithatRight.src = "img/crash.png";
           }
 
@@ -127,6 +139,7 @@ function mainWorkFlow() {
     }
   };
 }
+
 //
 
 document.onkeyup = (e) => {
@@ -135,37 +148,49 @@ document.onkeyup = (e) => {
   const buttonLocalStorageObj = JSON.parse(buttonLocalStorageString);
   if (localStorage.length === 0) {
     buttonLocalStorage.map((button) => {
-      if (button.editedKey === key) {
-        if (button.orignalKey === "i" || button.orignalKey === "k") {
+      if (button.editedKey.toLowerCase() === key.toLowerCase()) {
+        if (
+          button.orignalKey.toLowerCase() === "i" ||
+          button.orignalKey.toLowerCase() === "k"
+        ) {
           hithatLeft.src = "img/hihat-top.png";
         }
-        if (button.orignalKey === "e" || button.orignalKey) {
+        if (
+          button.orignalKey.toLowerCase() === "e" ||
+          button.orignalKey.toLowerCase()
+        ) {
           hithatRight.src = "img/hihat-top.png";
         }
         // console.log(key);
       } else {
-        if (key === "i" || key === "k") {
+        if (key.toLowerCase() === "i" || key.toLowerCase() === "k") {
           hithatLeft.src = "img/hihat-top.png";
         }
-        if (key === "e" || key === "r") {
+        if (key.toLowerCase() === "e" || key.toLowerCase() === "r") {
           hithatRight.src = "img/hihat-top.png";
         }
       }
     });
   } else {
     buttonLocalStorageObj.map((button) => {
-      if (button.editedKey === key) {
-        if (button.orignalKey === "i" || button.orignalKey === "k") {
+      if (button.editedKey.toLowerCase() === key.toLowerCase()) {
+        if (
+          button.orignalKey.toLowerCase() === "i" ||
+          button.orignalKey.toLowerCase() === "k"
+        ) {
           hithatLeft.src = "img/hihat-top.png";
         }
-        if (button.orignalKey === "e" || button.orignalKey) {
+        if (
+          button.orignalKey.toLowerCase() === "e" ||
+          button.orignalKey.toLowerCase()
+        ) {
           hithatRight.src = "img/hihat-top.png";
         }
       } else {
-        if (key === "i" || key === "k") {
+        if (key.toLowerCase() === "i" || key.toLowerCase() === "k") {
           hithatLeft.src = "img/hihat-top.png";
         }
-        if (key === "e" || key === "r") {
+        if (key.toLowerCase() === "e" || key.toLowerCase() === "r") {
           hithatRight.src = "img/hihat-top.png";
         }
       }
